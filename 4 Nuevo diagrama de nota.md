@@ -1,8 +1,11 @@
 ```mermaid
 sequenceDiagram
+    actor user
     participant browser
     participant server
 
+
+    user->>browser: type note
     browser->>server: POST https://fullstack-exampleapp.herokuapp.com/new_note
     activate server
     server-->>browser: HTTP 302
@@ -31,6 +34,8 @@ sequenceDiagram
     deactivate server
 
     Note right of browser: The browser executes the callback function that renders the notes
+
+    browser-->>user: show list
 
 
 
